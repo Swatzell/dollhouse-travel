@@ -9,3 +9,5 @@ const PlacesToStay = () => {
         </div>
     );
 }
+
+export default PlacesToStay;
