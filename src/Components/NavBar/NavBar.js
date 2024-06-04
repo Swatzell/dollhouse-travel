@@ -11,7 +11,7 @@ const NavBar = () => {
         <ul className="navbar-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
-            <li><Link to="/placestostay">Places to Stay</Link></li>
+            <li><Link to="/searchdestinations">Search Destinations</Link></li>
             <li><Link to="/requestbooking">Request Booking Consultation</Link></li>
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/connect">Connect</Link></li>
