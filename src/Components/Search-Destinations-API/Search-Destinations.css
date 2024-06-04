@@ -1,0 +1,41 @@
+.searchsection-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-container {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .results-container,
+  .favorites-container {
+    margin-bottom: 40px;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .destination-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .destination-item {
+    margin-bottom: 10px;
+  }
+  
+  .destination-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+  
