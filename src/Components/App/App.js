@@ -5,7 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import Home from '../Home/Home';
 import About from '../About-Page/About';
 import Connect from '../Connect-Page/Connect';
-import PlacesToStay from '../Places-to-Stay/Places-to-Stay';
+import PlacesToStay from '../Search-Destinations-API/Search-Destinations';
 import RequestBooking from '../Request-Booking/Request-Booking';
 import Blog from '../Blog/Blog';
 
