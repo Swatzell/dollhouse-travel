@@ -47,6 +47,51 @@ const SearchDestinations = () => {
         setFavorites(updatedFavorites);
       };
 
-      
+      return (
+        <div className="searchsection-container">
+          <h1>Destination Search</h1>
+          <div className="search-container">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Enter a destination"
+            />
+            <button onClick={handleSearch} disabled={loading}>
+              {loading ? 'Searching...' : 'Search'}
+            </button>
+          </div>
+    
+          {error && <div className="error">{error}</div>}
+    
+          <div className="results-container">
+            <h2>Search Results</h2>
+            {loading && <p>Loading...</p>}
+            <ul className="destination-list">
+              {searchResults.map((destination) => (
+                <li key={destination.dest_id} className="destination-item">
+                  <img src={destination.image_url} alt={destination.label} />
+                  <span>{destination.label}</span>
+                  <button onClick={() => addToFavorites(destination)}>Add to Favorites</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+    
+          <div className="favorites-container">
+            <h2>Favorites</h2>
+            <ul className="destination-list">
+              {favorites.map((favorite) => (
+                <li key={favorite.dest_id} className="destination-item">
+                  <img src={favorite.image_url} alt={favorite.label} />
+                  <span>{favorite.label}</span>
+                  <button onClick={() => removeFromFavorites(favorite.dest_id)}>Remove from Favorites</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      );
+    };
 
 export default SearchDestinations;
