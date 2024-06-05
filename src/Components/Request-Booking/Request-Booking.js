@@ -97,3 +97,88 @@ const BookingForm = () => {
         setIsSubmitting(false);
       });
   };
+
+  return (
+    <div className="container">
+      <h1>Request A Booking Consultation</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+          {errors.name && <span className="error">{errors.name}</span>}
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          {errors.email && <span className="error">{errors.email}</span>}
+        </label>
+        <label>
+          Address:
+          <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+          {errors.address && <span className="error">{errors.address}</span>}
+        </label>
+        <label>
+          City:
+          <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+          {errors.city && <span className="error">{errors.city}</span>}
+        </label>
+        <label>
+          State:
+          <input type="text" name="state" value={formData.state} onChange={handleChange} required />
+          {errors.state && <span className="error">{errors.state}</span>}
+        </label>
+        <label>
+          Zip Code:
+          <input type="text" name="zipCode" value={formData.zipCode} onChange={handleChange} required />
+          {errors.zipCode && <span className="error">{errors.zipCode}</span>}
+        </label>
+        <label>
+          Number of Adults:
+          <input type="number" name="numberOfAdults" value={formData.numberOfAdults} onChange={handleChange} required />
+          {errors.numberOfAdults && <span className="error">{errors.numberOfAdults}</span>}
+        </label>
+        <label>
+          Number of Children:
+          <input type="number" name="numberOfChildren" value={formData.numberOfChildren} onChange={handleChange} required />
+          {errors.numberOfChildren && <span className="error">{errors.numberOfChildren}</span>}
+        </label>
+        <label>
+          Preferred Start Date:
+          <DatePicker
+            selected={formData.preferredStartDate}
+            onChange={(date) => handleDateChange('preferredStartDate', date)}
+            dateFormat="MM/dd/yyyy"
+            required
+          />
+          {errors.preferredStartDate && <span className="error">{errors.preferredStartDate}</span>}
+        </label>
+        <label>
+          Preferred End Date:
+          <DatePicker
+            selected={formData.preferredEndDate}
+            onChange={(date) => handleDateChange('preferredEndDate', date)}
+            dateFormat="MM/dd/yyyy"
+            required
+          />
+          {errors.preferredEndDate && <span className="error">{errors.preferredEndDate}</span>}
+        </label>
+        <label>
+          Preferred Hotel:
+          <input type="text" name="preferredHotel" value={formData.preferredHotel} onChange={handleChange} required />
+          {errors.preferredHotel && <span className="error">{errors.preferredHotel}</span>}
+        </label>
+        <label>
+          Second Hotel Preference:
+          <input type="text" name="secondHotelPreference" value={formData.secondHotelPreference} onChange={handleChange} />
+        </label>
+        <label>
+          Special Requests:
+          <textarea name="specialRequests" value={formData.specialRequests} onChange={handleChange} />
+        </label>
+        {errors.submit && <span className="error">{errors.submit}</span>}
+        {isSubmitted && <span className="success">Form submitted successfully!</span>}
+        <button type="submit" disabled={isSubmitting}>Submit</button>
+      </form>
+    </div>
+  );
+};
