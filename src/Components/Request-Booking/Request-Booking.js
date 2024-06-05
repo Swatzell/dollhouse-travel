@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
 import DatePicker from 'react-datepicker';
@@ -6,10 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import "./Request-Booking.css";
 
 const BookingForm = () => {
-    const serviceID = 'service_id';
-    const templateID = 'template_id';
-    const userID = 'user_id';
-  
+    const form = useRef();
     const [formData, setFormData] = useState({
       name: '',
       email: '',
@@ -29,6 +26,11 @@ const BookingForm = () => {
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const serviceID = 'default_service';
+    const templateID = 'template_4qitqlf';
+    const userID = 'cZPJCVxwrSzEluBCO';
+
     
     const validate = () => {
         const newErrors = {};
@@ -50,63 +52,75 @@ const BookingForm = () => {
         return newErrors;
       };
 
-
     const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleDateChange = (name, date) => {
-    setFormData({
-      ...formData,
-      [name]: date,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    setIsSubmitting(true);
-    setErrors({});
-
-    const formattedData = {
-      ...formData,
-      preferredStartDate: formData.preferredStartDate.toLocaleDateString(),
-      preferredEndDate: formData.preferredEndDate.toLocaleDateString(),
-      recipientEmail,
+      const { name, value } = e.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
     };
 
-    emailjs.send(serviceID, templateID, formattedData, userID)
-      .then((result) => {
-        console.log('Email successfully sent!', result.text);
-        setIsSubmitted(true);
-      })
-      .catch((error) => {
-        console.error('Failed to send email.', error.text);
-        setErrors({ submit: 'Failed to send email. Please try again later.' });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    const handleDateChange = (name, date) => {
+      setFormData({
+        ...formData,
+        [name]: date,
       });
-  };
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+    
+        setIsSubmitting(true);
+        setErrors({});
+    
+        const formattedData = {
+            ...formData,
+            preferredStartDate: formData.preferredStartDate ? formData.preferredStartDate.toLocaleDateString() : '',
+            preferredEndDate: formData.preferredEndDate ? formData.preferredEndDate.toLocaleDateString() : '',
+        };
+    
+        emailjs.send(serviceID, templateID, formattedData, userID)
+            .then((result) => {
+                console.log('Email successfully sent!', result.text);
+                setIsSubmitted(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    address: '',
+                    city: '',
+                    state: '',
+                    zipCode: '',
+                    numberOfAdults: '',
+                    numberOfChildren: '',
+                    preferredStartDate: null,
+                    preferredEndDate: null,
+                    preferredHotel: '',
+                    secondHotelPreference: '',
+                    specialRequests: '',
+                });
+            })
+            .catch((error) => {
+                console.error('Failed to send email.', error.text);
+                setErrors({ submit: 'Failed to send email. Please try again later.' });
+            })
+            .finally(() => {
+                setIsSubmitting(false);
+            });
+    };
 
   return (
     <div className="container">
       <h1>Request A Booking Consultation</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
+      <form ref={form} onSubmit={handleSubmit}>
+      Name:
           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
           {errors.name && <span className="error">{errors.name}</span>}
-        </label>
+        
         <label>
           Email:
           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
@@ -183,6 +197,7 @@ const BookingForm = () => {
   );
 };
 
+
 BookingForm.propTypes = {
     serviceID: PropTypes.string.isRequired,
     templateID: PropTypes.string.isRequired,
@@ -190,4 +205,4 @@ BookingForm.propTypes = {
     recipientEmail: PropTypes.string.isRequired,
   };
   
-  export default BookingForm;
+export default BookingForm;
