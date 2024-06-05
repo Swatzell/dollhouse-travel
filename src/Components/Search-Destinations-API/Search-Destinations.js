@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Search-Destinations.css';
 
-const SearchDestinations = () => {
-    const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
-    const [favorites, setFavorites] = useState([]);
+const SearchDestinations = ({ initialSearchQuery, initialSearchResults, initialFavorites }) => {
+    const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
+    const [searchResults, setSearchResults] = useState(initialSearchResults);
+    const [favorites, setFavorites] = useState(initialFavorites);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -104,6 +105,26 @@ const SearchDestinations = () => {
             </div>
         </div>
     );
+};
+
+SearchDestinations.propTypes = {
+    initialSearchQuery: PropTypes.string,
+    initialSearchResults: PropTypes.arrayOf(PropTypes.shape({
+        dest_id: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+    })),
+    initialFavorites: PropTypes.arrayOf(PropTypes.shape({
+        dest_id: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+    })),
+};
+
+SearchDestinations.defaultProps = {
+    initialSearchQuery: '',
+    initialSearchResults: [],
+    initialFavorites: [],
 };
 
 export default SearchDestinations;
