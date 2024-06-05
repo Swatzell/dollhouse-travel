@@ -46,5 +46,26 @@ const BookingForm = ({ serviceID, templateID, userID, recipientEmail }) => {
         return newErrors;
       };
 
-      
-    
+
+    const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleDateChange = (name, date) => {
+    setFormData({
+      ...formData,
+      [name]: date,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
