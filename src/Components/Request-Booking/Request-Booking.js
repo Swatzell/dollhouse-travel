@@ -5,7 +5,11 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import "./Request-Booking.css";
 
-const BookingForm = ({ serviceID, templateID, userID, recipientEmail }) => {
+const BookingForm = () => {
+    const serviceID = 'service_id';
+    const templateID = 'template_id';
+    const userID = 'user_id';
+  
     const [formData, setFormData] = useState({
       name: '',
       email: '',
