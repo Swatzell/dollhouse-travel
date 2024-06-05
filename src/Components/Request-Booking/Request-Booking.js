@@ -73,3 +73,27 @@ const BookingForm = () => {
       setErrors(validationErrors);
       return;
     }
+
+    setIsSubmitting(true);
+    setErrors({});
+
+    const formattedData = {
+      ...formData,
+      preferredStartDate: formData.preferredStartDate.toLocaleDateString(),
+      preferredEndDate: formData.preferredEndDate.toLocaleDateString(),
+      recipientEmail,
+    };
+
+    emailjs.send(serviceID, templateID, formattedData, userID)
+      .then((result) => {
+        console.log('Email successfully sent!', result.text);
+        setIsSubmitted(true);
+      })
+      .catch((error) => {
+        console.error('Failed to send email.', error.text);
+        setErrors({ submit: 'Failed to send email. Please try again later.' });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
