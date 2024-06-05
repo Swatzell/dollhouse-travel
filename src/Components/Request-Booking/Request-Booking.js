@@ -182,3 +182,12 @@ const BookingForm = () => {
     </div>
   );
 };
+
+BookingForm.propTypes = {
+    serviceID: PropTypes.string.isRequired,
+    templateID: PropTypes.string.isRequired,
+    userID: PropTypes.string.isRequired,
+    recipientEmail: PropTypes.string.isRequired,
+  };
+  
+  export default BookingForm;
