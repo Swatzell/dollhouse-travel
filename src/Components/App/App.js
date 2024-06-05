@@ -6,9 +6,9 @@ import Home from '../Home/Home';
 import About from '../About-Page/About';
 import Connect from '../Connect-Page/Connect';
 import SearchDestinations from '../Search-Destinations-API/Search-Destinations';
-import RequestBooking from '../Request-Booking/Request-Booking';
+import BookingForm from '../Request-Booking/Request-Booking';
 import Blog from '../Blog/Blog';
-// import SearchDestinations from '../Search-Destinations-API/Search-Destinations';
+
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/searchdestinations" element={<SearchDestinations />} />
-          <Route path="/requestbooking" element={<RequestBooking />} />
+          <Route path="/requestbooking" element={<BookingForm />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
       </Router>
