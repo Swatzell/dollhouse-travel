@@ -12,7 +12,7 @@ const Connect = () => {
   <FacebookEmbed url="https://www.facebook.com/61560671880324/posts/122097673736355729/?mibextid=WC7FNe&rdid=1wJtIc2OOsjnj8nS" width={550} />
 </div>
 <h2>Instagram</h2>
-<div style={{ display: 'flex', justifyContent: 'center' }}>
+<div>
   <InstagramEmbed url="https://www.instagram.com/p/CkgMVfBOlxx/?igsh=MTJtYnBxdTBjOWRyMw%3D%3D" width={328} />
 </div>
         </div>
