@@ -12,6 +12,8 @@
   .search-container input {
     flex: 1;
     margin-right: 10px;
+    max-width: 350px;
+    margin-left: 200px;
   }
   
   .results-container,
