@@ -8,6 +8,7 @@ import Connect from '../Connect-Page/Connect';
 import SearchDestinations from '../Search-Destinations-API/Search-Destinations';
 import BookingForm from '../Request-Booking/Request-Booking';
 import Blog from '../Blog/Blog';
+import NotFound from '../Not-Found/NotFound';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/searchdestinations" element={<SearchDestinations />} />
           <Route path="/requestbooking" element={<BookingForm />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
