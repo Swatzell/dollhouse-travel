@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Dollhouse Travel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot 2024-06-07 at 4 10 47 PM](https://github.com/Swatzell/dollhouse-travel/assets/59072840/3cc37ba1-a292-43d9-b57d-0b0f7444267a)
 
-## Available Scripts
 
-In the project directory, you can run:
+![Screenshot 2024-06-07 at 4 11 20 PM](https://github.com/Swatzell/dollhouse-travel/assets/59072840/267d83e1-635f-4a2c-8563-e00b14320d59)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🌟 Overview
 
-### `npm test`
+Dollhouse Travel is a work in progress web application that provides users with the ability to book vacations and get in touch with a travel agent. Users can search locations and favorite them, view the social media profiles of the agent, and fill out a form that is emailed to the agent for a booking consultation. Eventually there will be a blog for the agent as well as many other features.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## ⚙️ Installation & Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repo
+2. CD into dollhouse-travel
+3. Install all dependancies with 'npm i'
+4. Run the app with 'npm start'
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Requirements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Node.js
+2. npm
 
-### `npm run eject`
+### Tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. While in the repo, run 'npm run cypress open'
+2. Select the test you wish to run!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🏆 Wins
+Succesfully integrated emailJS so that when a form is filled out it is then emailed directly to the agent which was an amazing learning experience.
+Applied booking.coms API so that a user can search a destination and favorite it.
+found out about react social media embed and embedded facebook and instagram into the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚧 Challenges
+testing emailJS with cypress
