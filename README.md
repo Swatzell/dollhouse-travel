@@ -11,6 +11,11 @@
 
 Dollhouse Travel is a work in progress web application that provides users with the ability to book vacations and get in touch with a travel agent. Users can search locations and favorite them, view the social media profiles of the agent, and fill out a form that is emailed to the agent for a booking consultation. Eventually there will be a blog for the agent as well as many other features.
 
+## This app is very much a work in progress. I am working with a designer and it will actually be deployed eventually on a regular domain and I will eventually be building it it's own backend as well. Some of the pages have yet to be completed because I am waiting on designs so I did cypress testing for the pages that already have things implemented and tried to get it to the point of passing.
+
+## Deployed Link
+
+https://dollhouse-travel.vercel.app/
 
 ## ⚙️ Installation & Setup
 
