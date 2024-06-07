@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import { ReactComponent as Logo } from '../images/DH-Black.svg'
 
 const NavBar = () => {
   return (
     <nav className="navbar">
         <div className="dollhouse-logo">
-            <img src="" alt="Dollhouse Logo" />
+            <Logo src="logo" alt="Dollhouse Logo" />
         </div>
         <ul className="navbar-links">
             <li><Link to="/">Home</Link></li>
